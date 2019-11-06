@@ -39,25 +39,22 @@ void keyboard_pre_init_kb(void) {
 
 
 bool led_update_kb(led_t led_state) {
-   
-  if (led_state.num_lock) 
+
+  if (led_state.num_lock)
       USB_LED_NUM_LOCK_ON;
   else
       USB_LED_NUM_LOCK_OFF;
 
-  if (led_state.caps_lock) 
+  if (led_state.caps_lock)
       USB_LED_CAPS_LOCK_ON;
   else
       USB_LED_CAPS_LOCK_OFF;
 
-  if (led_state.scroll_lock) 
+  if (led_state.scroll_lock)
       USB_LED_SCROLL_LOCK_ON;
   else
       USB_LED_SCROLL_LOCK_OFF;
 
-  led_update_user(led_state);
-  
-  
-  return true;
+  return led_update_user(led_state);
 }
 
