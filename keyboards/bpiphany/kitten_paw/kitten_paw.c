@@ -30,10 +30,16 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 }
 
 
-bool led_update_kb(led_t led_state) {
-  
+void keyboard_pre_init_user(void) {
+  // Call the keyboard pre init code.
+
+  // Init LED pins
   CONFIG_LED_IO;
-  
+}
+
+
+bool led_update_kb(led_t led_state) {
+   
   if (led_state.num_lock) 
       USB_LED_NUM_LOCK_ON;
   else
