@@ -30,7 +30,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 }
 
 
-void keyboard_pre_init_user(void) {
+void keyboard_pre_init_kb(void) {
   // Call the keyboard pre init code.
 
   // Init LED pins
