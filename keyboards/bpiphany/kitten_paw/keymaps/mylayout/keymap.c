@@ -76,9 +76,8 @@ layer_state_t layer_state_set_user(layer_state_t state){
     return state;
 }
 
-
-void led_set_user(uint8_t usb_led) {
-
+bool led_update_user(led_t led_state) {
+  
     uint8_t layer = biton32(layer_state);
     switch (layer) {
 //        case DEFAULT:
@@ -88,6 +87,7 @@ void led_set_user(uint8_t usb_led) {
             USB_LED_SCROLL_LOCK_ON;
             break;
     }
+    return true;
 }
 
 
